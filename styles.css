@@ -1,1 +1,155 @@
-d
+/* Variables de color para mantener un estilo limpio */
+:root {
+    --color-fondo: #f9f9f9;
+    --color-texto: #333333;
+    --color-primario: #2c2c2c;
+    --color-boton: #25D366; /* Verde WhatsApp */
+    --color-blanco: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+}
+
+/* Header */
+.header {
+    background-color: var(--color-blanco);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.header nav a {
+    text-decoration: none;
+    color: var(--color-texto);
+    font-weight: 600;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #eee;
+}
+
+.hero h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+/* Catálogo y Filtros */
+.seccion-catalogo {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.filtros {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.filtros button {
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    background: var(--color-blanco);
+    cursor: pointer;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.filtros button:hover {
+    background: var(--color-primario);
+    color: var(--color-blanco);
+}
+
+/* Grid de Productos */
+.grid-productos {
+    display: grid;
+    /* Se adapta a celulares (1 columna) y PCs (hasta 4 columnas) */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Tarjeta individual */
+.tarjeta-producto {
+    background: var(--color-blanco);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+
+.tarjeta-producto:hover {
+    transform: translateY(-5px);
+}
+
+.imagen-contenedor img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover; /* Evita que la foto se deforme */
+}
+
+.info-producto {
+    padding: 15px;
+}
+
+.categoria {
+    font-size: 0.8rem;
+    color: #777;
+    text-transform: uppercase;
+}
+
+.info-producto h3 {
+    font-size: 1.2rem;
+    margin: 5px 0;
+}
+
+.detalles {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.precio {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Botón WhatsApp */
+.btn-comprar {
+    display: block;
+    text-align: center;
+    background-color: var(--color-boton);
+    color: var(--color-blanco);
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    margin-top: 40px;
+}
