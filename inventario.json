@@ -4,7 +4,8 @@
     "marca": "C.P.",
     "categoria": "Blusas",
     "nombre": "Blusa Floral de Seda",
-    "talla": "S",
+    "tallas": ["S", "M"],
+    "colores": ["Rojo", "Blanco"],
     "estado": "10/10",
     "precio": 45.00,
     "foto": "assets/img/productos/cp-001.avif",
@@ -15,7 +16,8 @@
     "marca": "C.P.",
     "categoria": "Vestidos",
     "nombre": "Vestido Midi Cruzado",
-    "talla": "M",
+    "tallas": ["M", "L"],
+    "colores": ["Negro", "Azul Marino"],
     "estado": "9/10",
     "precio": 85.00,
     "foto": "assets/img/productos/cp-002.avif",
@@ -26,21 +28,11 @@
     "marca": "C.P.",
     "categoria": "Blusas",
     "nombre": "Top Básico Acanalado",
-    "talla": "L",
+    "tallas": ["S"],
+    "colores": ["Amarillo"],
     "estado": "Nuevecito",
     "precio": 30.00,
     "foto": "assets/img/productos/cp-003.avif",
     "disponible": true
-  },
-  {
-    "id": "cp-004",
-    "marca": "Otras Marcas",
-    "categoria": "Pantalones",
-    "nombre": "Jeans Rectos Tiro Alto",
-    "talla": "30",
-    "estado": "8/10",
-    "precio": 55.00,
-    "foto": "assets/img/productos/cp-004.avif",
-    "disponible": false
   }
 ]
