@@ -4,8 +4,8 @@
 :root {
     --color-fondo: #f9f9f9;
     --color-texto: #333333;
-    --color-rojo-vida: #E32742;     /* Rojo cereza del logo */
-    --color-amarillo-wasi: #F5A623; /* Amarillo mostaza del logo */
+    --color-rojo-vida: #E32742;     
+    --color-amarillo-wasi: #F5A623; 
     --color-blanco: #ffffff;
 }
 
@@ -22,11 +22,12 @@ body {
 }
 
 /* =========================================
-   HEADER Y LOGO
+   HEADER Y LOGO (Corregido el parpadeo)
    ========================================= */
 .header {
     background-color: var(--color-blanco);
-    padding: 20px;
+    padding: 0 20px;
+    min-height: 70px; /* Evita que el menú salte al cargar */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -51,7 +52,7 @@ body {
     text-decoration: none;
     color: var(--color-texto);
     font-weight: 600;
-    transition: color 0.3s;
+    transition: color 0.2s ease-in-out; /* Transición específica para evitar parpadeo general */
 }
 
 .header nav a:hover {
@@ -98,7 +99,7 @@ body {
     cursor: pointer;
     border-radius: 20px;
     font-weight: bold;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .filtros button:hover {
@@ -177,7 +178,7 @@ body {
 }
 
 /* =========================================
-   VISTA DE DETALLES (NUEVO)
+   VISTA DE DETALLES
    ========================================= */
 .contenedor-detalle-pagina {
     max-width: 1200px;
@@ -277,7 +278,6 @@ body {
     display: block;
 }
 
-/* Responsividad para la vista detalles en celulares */
 @media (max-width: 768px) {
     .grid-detalle {
         grid-template-columns: 1fr;
