@@ -1,1 +1,42 @@
-d
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C.P. Secondhand | Moda Circular</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">C.P. Secondhand</div>
+        <nav>
+            <a href="#catalogo">Catálogo</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Moda circular en perfecto estado</h1>
+            <p>Tus marcas favoritas como C.P. listas para una segunda vida.</p>
+        </section>
+
+        <section id="catalogo" class="seccion-catalogo">
+            <div class="filtros">
+                <button onclick="filtrar('Todo')">Todo</button>
+                <button onclick="filtrar('Blusas')">Blusas</button>
+                <button onclick="filtrar('Vestidos')">Vestidos</button>
+            </div>
+
+            <div id="lista-productos" class="grid-productos">
+                <p>Cargando prendas...</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 C.P. Secondhand - Barranco, Lima.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
