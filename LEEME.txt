@@ -1,0 +1,56 @@
+SANTA ROSA II · COORDINADOR 3D
+
+INICIO
+1. Extrae el ZIP completo en una carpeta.
+2. Abre index.html con Edge o Chrome, o ejecuta ABRIR_VISOR.cmd.
+3. El modelo inicial se carga automáticamente. No requiere instalar Revit ni conexión a Internet.
+4. Para abrir una revisión o un proyecto con avance, pulsa «Abrir modelo» y selecciona un archivo .srii.
+
+CÓMO COORDINAR
+• Selecciona una partida en el panel izquierdo. En móvil, desliza horizontalmente la lista de partidas.
+• Filtra por tipo, material o texto. «Aislar filtro» oculta las otras piezas; desmárcalo para verlas transparentes.
+• Pulsa una pieza en el modelo o «Localizar» en el despiece para ver sus datos. Ctrl+clic selecciona varias.
+• Los checks registran la conclusión de cada elemento en LA PARTIDA ACTIVA. Un mismo elemento puede intervenir en varias partidas.
+• «Concluir selección / filtro» aplica a las piezas seleccionadas; si no hay selección, aplica al filtro completo.
+• «Quitar selección» permite volver a trabajar sobre todo el filtro.
+• «Color por avance» muestra verde lo concluido y gris lo pendiente.
+• Puedes crear una partida con las piezas del filtro/selección, y guardar notas de coordinación.
+• Las partidas iniciales son propuestas editables de seguimiento; el avance se calcula por número de elementos, no por costo ni ponderación de ingeniería.
+
+PINTURA
+No se ha supuesto que todo el acero se pinte. La partida comienza sin alcance confirmado.
+Pulsa «Ver candidatos», revisa el acabado y añade las piezas pertinentes. «Explorar todas las piezas» permite incluir elementos que la clasificación inicial excluyó. Selecciona piezas individuales o usa filtros antes de añadirlas.
+La superficie mostrada es GEOMÉTRICA TOTAL: incluye interiores y contactos. No constituye automáticamente el metrado neto de pintura. Deducciones, manos y sistema de acabado deben definirse según la especificación. «Criterios del metrado» explica los supuestos.
+
+GUARDAR Y COMPARTIR
+«Guardar proyecto»: descarga un .srii con el modelo completo y el avance actual. Ese archivo se abre desde la misma página en otro equipo.
+«Exportar solo avance»: descarga un JSON pequeño. El destinatario debe tener la misma revisión del modelo y usar «Importar avance».
+«Metrado CSV»: exporta las piezas del filtro actual y su estado; abre el CSV con Excel usando separador punto y coma.
+El avance se conserva en el navegador actual. Para respaldo o para cambiar de computadora, DESCARGA EL PROYECTO. No depende de una cuenta ni se sube a servidores. Borrar datos del navegador puede borrar el avance local.
+No hay colaboración simultánea ni fusión automática de avances: coordina quién entrega la última versión. Importar un avance sustituye el actual, previa confirmación. Avance_Inicial.json permite restablecer los checks del modelo original.
+
+ARCHIVOS
+index.html + app.js + styles.css: aplicación portable.
+modelo-inicial.js: modelo inicial precargado para funcionar incluso abriendo HTML directamente.
+SantaRosa_Modelo.srii: geometría, identificación y metrados del archivo final de Revit. Formato JSON propio, documentado en FORMATO_SRII.md.
+SantaRosa_Modelo.glb: exportación glTF2.0 estándar para intercambio con otros visores; contiene una malla por elemento y propiedades en extras. El estado de coordinación se comparte en .srii/JSON, no en GLB. La página abre .srii, no archivos .rvt ni GLB arbitrarios.
+Modelo_Origen.rvt: copia del archivo de Revit usado como fuente.
+Metrado_Actualizado.csv: metrado completo extraído de esta revisión, reemplaza las cantidades anteriores a los últimos cambios del modelo.
+Verificacion_exportacion.json: recuentos y huella SHA256 del .srii original.
+codigo/: fuente editable del visor; npm install y npm run build regeneran app.js.
+exportador/: fuentes del exportador para un técnico. El complemento se ejecutó solo para extraer esta revisión; no se deja instalado.
+
+NUEVAS REVISIONES
+Modificar el RVT no actualiza automáticamente el visor: debe repetirse la extracción. El exportador usa la API de Revit2026 desde una sesión abierta; sus fuentes requieren compilar con las referencias y adaptar las rutas antes de instalarlo. No es un instalador listo para cualquier proyecto.
+No se recalculan geometría ni pesos dentro del navegador: se usan los valores exportados desde Revit. La edición del avance no modifica el RVT.
+
+PUBLICAR COMO WEB
+La carpeta se puede alojar como sitio estático HTTPS. Esta entrega es LOCAL y portable; no se ha publicado un enlace en Internet. Para enviar al cliente ahora, comparte el ZIP completo y el .srii con avance si corresponde.
+
+VERIFICACIÓN DE ENTREGA
+435 elementos exportados, 43,585 triángulos, 435 nodos en GLB. Identificadores únicos.
+Probado en navegador mediante servidor local HTTP: carga del modelo real, filtros, checks, persistencia al recargar, definición de pintura, exportación del proyecto y reapertura con avance, importación del avance inicial.
+Pesos calculados por volumen y densidad adoptada (acero7850, AISI3047930kg/m³). Superficies con criterio geométrico, no neto de pintura.
+
+La prueba automatizada de apertura directa file:// no está permitida por el navegador integrado. La aplicación usa scripts locales clásicos y no descarga módulos ni datos por red; la apertura directa se deja disponible para Edge/Chrome. Si el equipo bloquea archivos HTML locales, puede servirse la misma carpeta con un servidor HTTP local o alojarla en HTTPS.
+

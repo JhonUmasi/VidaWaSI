@@ -1,0 +1,5 @@
+Modelo: D:\trabajos\Costos\Estructura Metalica\SantaRosaII_Rejilla_DETALLADO_CORREGIDO.rvt
+Elementos=435
+Triangulos=43585
+Exportado=D:\trabajos\Costos\Estructura Metalica\SantaRosa_Coordinador\SantaRosa_Modelo.srii
+Modelo Revit sin modificar.

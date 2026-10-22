@@ -1,0 +1,21 @@
+{
+  "source": "SantaRosaII_Rejilla_DETALLADO_CORREGIDO.rvt",
+  "objects": 435,
+  "triangles": 43585,
+  "weight": 5052.090197936846,
+  "area": 154.49437153793264,
+  "kinds": {
+    "rejilla": 126,
+    "anclajes": 62,
+    "vigas": 7,
+    "apoyos": 4,
+    "brazos": 40,
+    "grating": 20,
+    "barandas": 19,
+    "drenaje": 14,
+    "placas": 16,
+    "soldaduras": 12,
+    "pernos": 115
+  },
+  "sha256": "3b3016622fbc9994181baee3eb18bdfe65dfebaa5a757cfa4b98ee174f488f86"
+}
